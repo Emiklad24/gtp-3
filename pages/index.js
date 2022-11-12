@@ -1,5 +1,5 @@
 import Head from "next/head";
-
+import { Article, CTA, Feature, Brand, Navbar } from "../components";
 const Home = () => {
   // className={`${$.card} ${classes}`}
   return (
