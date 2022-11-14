@@ -8,6 +8,7 @@ import {
   Header,
 } from "../containers";
 import { CTA, Brand, Navbar } from "../components";
+import $ from "../styles/index.module.css";
 
 const Home = () => {
   return (
