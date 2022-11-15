@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useState } from "react";
 import styles from "./navbar.module.css";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import Image from "next/image";
 
 const Navbar = () => {
+  const [toggleMenu, setToggleMenu] = useState(false);
   return (
     <div className={styles.gpt3__navbar}>
       <div className={styles["gpt3__navbar-links"]}>
@@ -34,6 +35,21 @@ const Navbar = () => {
       <div className={styles["gpt3__navbar-sign"]}>
         <p>Sign in</p>
         <button type="button">Sign up</button>
+      </div>
+      <div className={styles["gpt3__navbar-menu"]}>
+        {toggleMenu ? (
+          <RiCloseLine
+            color="#fff"
+            size={27}
+            onClick={() => setToggleMenu(!toggleMenu)}
+          />
+        ) : (
+          <RiMenu3Line
+            color="#fff"
+            size={27}
+            onClick={() => setToggleMenu(!toggleMenu)}
+          />
+        )}
       </div>
     </div>
   );
