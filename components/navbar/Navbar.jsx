@@ -4,6 +4,26 @@ import styles from "./navbar.module.css";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import Image from "next/image";
 
+const Menu = () => (
+  <>
+    <p>
+      <a href="#home">Home</a>
+    </p>
+    <p>
+      <a href="#wgpt3">What is GPT3?</a>
+    </p>
+    <p>
+      <a href="#possibility">Open AI</a>
+    </p>
+    <p>
+      <a href="#features">Case Studies</a>
+    </p>
+    <p>
+      <a href="#blog">Library</a>
+    </p>
+  </>
+);
+
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
@@ -14,21 +34,7 @@ const Navbar = () => {
         </div>
 
         <div className={styles["gpt3__navbar-links_container"]}>
-          <p>
-            <a href="#home">Home</a>
-          </p>
-          <p>
-            <a href="#wgpt3">What is GPT3?</a>
-          </p>
-          <p>
-            <a href="#possibility">Open AI</a>
-          </p>
-          <p>
-            <a href="#features">Case Studies</a>
-          </p>
-          <p>
-            <a href="#blog">Library</a>
-          </p>
+          <Menu />
         </div>
       </div>
 
@@ -49,6 +55,22 @@ const Navbar = () => {
             size={27}
             onClick={() => setToggleMenu(!toggleMenu)}
           />
+        )}
+
+        {toggleMenu && (
+          <div
+            className={`${styles["gpt3__navbar-menu_container"]}, ${styles["scale-up-center"]}`}
+          >
+            <div className={styles["gpt3__navbar-container_links"]}>
+              <Menu />
+              <div
+                className={styles["gpt3__navbar-menu__container-links-sign"]}
+              >
+                <p>Sign in</p>
+                <button type="button">Sign up</button>
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
